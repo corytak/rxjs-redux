@@ -35,8 +35,6 @@ export class TodoComponent {
   @Input() id: number;
   @Output() toggle = new EventEmitter();
 
-  constructor(@Inject(state) private state: Observable<AppState>) {}
-
   public clicked(): void {
     this.toggle.emit({id: this.id});
   }

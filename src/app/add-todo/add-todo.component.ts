@@ -1,8 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-
 import { Observer } from 'rxjs/Observer';
 import { Observable } from 'rxjs/Observable';
-
 import { stateAndDispatcher, dispatcher, state, AppState } from '../../dispatch';
 import { Action, AddTodoAction } from '../../actions';
 
@@ -21,7 +19,6 @@ export class AddTodoComponent implements OnInit {
     constructor(
         @Inject(state) private state: Observable<AppState>,
         @Inject(dispatcher) private dispatcher: Observer<Action>) {
-        // nothing to do here
     }
 
     public ngOnInit(): void {
@@ -38,9 +35,7 @@ export class AddTodoComponent implements OnInit {
     public addTodo(): void {
         if (this.isTextEmpty === false) {
             const action: AddTodoAction = new AddTodoAction(this.nextId++, this.text);
-
             this.dispatcher.next(action);
-
             this.resetText();
         }
     }

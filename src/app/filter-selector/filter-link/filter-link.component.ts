@@ -1,9 +1,7 @@
 import { Component, Inject, Input } from '@angular/core';
-
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import 'rxjs/add/operator/map';
-
 import { AppState, stateAndDispatcher, state, dispatcher } from '../../../dispatch';
 import { Action, SetVisibilityFilter } from '../../../actions';
 
@@ -29,7 +27,6 @@ export class FilterLinkComponent {
 
   constructor( @Inject(dispatcher) private dispatcher: Observer<Action>,
     @Inject(state) private state: Observable<AppState>) {
-    // nothing to do here
   }
 
   public get textEffect() {
@@ -39,7 +36,6 @@ export class FilterLinkComponent {
 
   public setVisibilityFilter() {
     const action: SetVisibilityFilter = new SetVisibilityFilter(this.filter);
-
     this.dispatcher.next(action);
   }
 }

@@ -1,9 +1,7 @@
 import { Component, Inject } from '@angular/core';
-
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import 'rxjs/add/operator/map';
-
 import { AppState, stateAndDispatcher, state, dispatcher, ToDoItem } from '../../dispatch';
 import { Action, ToggleTodoAction } from '../../actions';
 import { TodoComponent } from './todo/todo.component';

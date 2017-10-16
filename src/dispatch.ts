@@ -1,12 +1,10 @@
 import { OpaqueToken, InjectionToken } from '@angular/core';
-
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/zip';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/scan';
-
 import { Action, ToggleTodoAction, SetVisibilityFilter, AddTodoAction } from './actions';
 
 export class ToDoItem {
@@ -29,10 +27,10 @@ export const stateAndDispatcher = [
         provide: initState,
         useValue: {
             todos: [
-                new ToDoItem(0, 'Eeny', false),
-                new ToDoItem(1, 'Meeny', false),
-                new ToDoItem(2, 'Miny', true),
-                new ToDoItem(3, 'Moe', false),
+                new ToDoItem(0, 'Mow the Lawn', false),
+                new ToDoItem(1, 'Build Rxjs Redux Alternative', false),
+                new ToDoItem(2, 'Relax', true),
+                new ToDoItem(3, 'Another To do!', false),
             ],
             visibilityFilter: 'SHOW_ALL'
         }
